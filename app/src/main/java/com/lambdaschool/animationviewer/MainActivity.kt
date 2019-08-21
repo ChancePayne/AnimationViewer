@@ -2,6 +2,7 @@ package com.lambdaschool.animationviewer
 
 import android.annotation.SuppressLint
 import android.graphics.ImageDecoder
+import android.graphics.drawable.Animatable
 import android.graphics.drawable.AnimatedImageDrawable
 import android.graphics.drawable.AnimationDrawable
 import android.os.Build
@@ -25,8 +26,13 @@ class MainActivity : AppCompatActivity() {
         }*/
 
         // use an animated drawable
-        val frameDrawable = ContextCompat.getDrawable(this, R.drawable.toaster_animated)
+        /*val frameDrawable = ContextCompat.getDrawable(this, R.drawable.toaster_animated)
         animated_image.setImageDrawable(frameDrawable)
-        (frameDrawable as AnimationDrawable).start()
+        (frameDrawable as AnimationDrawable).start()*/
+
+        // use animated vector drawable
+        val animatedVectorDrawable = ContextCompat.getDrawable(this, R.drawable.avd_playtopause)
+        animated_image.setImageDrawable(animatedVectorDrawable)
+        (animatedVectorDrawable as Animatable).start()
     }
 }
