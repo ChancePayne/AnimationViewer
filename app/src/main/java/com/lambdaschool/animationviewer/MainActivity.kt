@@ -15,5 +15,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // add and animate a gif
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            val gifDrawable = ImageDecoder.decodeDrawable(ImageDecoder.createSource(resources, R.drawable.walking_duck))
+            animated_image.setImageDrawable(gifDrawable)
+            (gifDrawable as AnimatedImageDrawable).start()
+        }
     }
 }
